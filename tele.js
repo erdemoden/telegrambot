@@ -10,7 +10,11 @@ function deneme(){
     bot.sendMessage(-1001220852356,"Ahmetcan Egonu Sikim !, egoist piç");
 }*/
 const server = http.createServer((request,response)=>{
-
+if(request.method === "GET"){
+    if(request.url === "/")
+    response.write("Merhaba Nasılsın");
+}
+response.end();
 });
 server.listen(process.env.PORT || 3000,()=>{
     bot.on('message',msg =>{
